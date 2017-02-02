@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Morback</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+  <body>
+    <h1>Tu cherches la petite bête !</h1>
+    <!-- Row 1 -->
+<table id="tab">
+    <tr id="r1">
+      <td id="c1"></td>
+      <td id="c2"></td>
+      <td id="c3"></td>
+    </tr>
+    <!-- Row 2 -->
+    <tr id="r2">
+      <td id="c4"></td>
+      <td id="c5"></td>
+      <td id="c6"></td>
+    </tr>
+    <!-- Row 3 -->
+    <tr id="r3">
+      <td id="c7"></td>
+      <td id="c8"></td>
+      <td id="c9"></td>
+    </tr>
+</table>
+
+
+<div id="myProgress">
+  <h1>You have 20 seconds for win... Good Luck !</h1>
+  <div id="myBar"></div>
+</div>
+<br>
+<button class="butt" onclick="move()">Click Me</button>
+
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="jquery.min.js"></script>
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  <script>
+    require('./renderer.js')
+  </script>
+  <script>
+  function move() {
+    var elem = document.getElementById("myBar");
+    var width = 0;
+    var id = setInterval(frame, 200);
+    function frame() {
+      if (width == 100) {
+        clearInterval(id);
+      } else {
+        width++;
+        elem.style.width = width + '%';
+      }
+    }
+  }
+  </script>
+</html>

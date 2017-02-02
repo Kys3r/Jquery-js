@@ -1,0 +1,18 @@
+// var case1 = carreaux[0];
+// var case2 = carreaux[1];
+// var case3 = carreaux[2];
+// var case4 = carreaux[3];
+// var case5 = carreaux[4];
+// var case6 = carreaux[5];
+// var case7 = carreaux[6];
+// var case8 = carreaux[7];
+// var case9 = carreaux[8];
+
+
+//random only ai
+randomPlay();
+var gameStatus = checkIfPlayerWon();
+if(gameStatus === 1) {
+  alert('Win');
+  $("td").css("pointer-events", "none");
+  $("#myBar").hide();
